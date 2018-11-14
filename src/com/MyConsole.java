@@ -2,7 +2,7 @@ package com;
 
 import javax.swing.*;
 
-public class Console extends JTextArea {
+public class MyConsole extends JTextArea {
     public String getConsoleMessage() {
         return consoleMessage;
     }
@@ -11,9 +11,9 @@ public class Console extends JTextArea {
         this.consoleMessage = consoleMessage;
     }
 
-    String consoleMessage = "Put title here ... ";
+    String consoleMessage = "Put title here...";
 
-    public Console() {
+    public MyConsole() {
         setColumns(30);
         setRows(10);
         setText(consoleMessage);

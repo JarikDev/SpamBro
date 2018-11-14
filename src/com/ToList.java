@@ -11,7 +11,7 @@ public class ToList extends JTextArea {
         this.toList = toList;
     }
 
-    String toList = "Recipients ... ";
+    String toList = "Recipients...";
 
     public ToList() {
         setColumns(30);

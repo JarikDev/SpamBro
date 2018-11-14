@@ -36,10 +36,10 @@ public class MailService extends JComboBox<String> {
         this.other = other;
     }
 
-    String mail="@mail.ru " ;
-    String yandex="@yandex.ru " ;
-    String gmail="@gmail.ru " ;
-    String other="some shitty unsupported service " ;
+    String mail="@mail.ru" ;
+    String yandex="@yandex.ru" ;
+    String gmail="@gmail.com" ;
+    String other="Some shitty unsupported service" ;
 
 
     public MailService() {

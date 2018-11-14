@@ -54,8 +54,8 @@ public class Main {
         //Console message
         jPanel.add(new JLabel("Console message: ",SwingConstants.LEFT), new GridBag (0,0,0,13,1,2)) ;
         //Console field
-        Console console=new Console();
-        jPanel.add(new JScrollPane(console,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,14,5,4)) ;
+        MyConsole myConsole=new MyConsole();
+        jPanel.add(new JScrollPane(myConsole,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,14,5,4)) ;
         //Right side
         //To list
         jPanel.add(new JLabel("To list:",SwingConstants.LEFT), new GridBag (0,0,7,0,1,2)) ;
@@ -101,48 +101,56 @@ public class Main {
             public void actionPerformed(ActionEvent e) {
                 myMessage.setText("Put message here ... ");
                 lta.setText("Put title here ... ");
-                console.setText("Console message here ... ");
+                myConsole.setText("Console message here ... ");
                 toList.setText("Recipients ... ");
                 from.setText("From ... ");
                 password.setText("Put password here ... ");
-                counter.setText("999");
+                counter.setText("1");
             }
         });
-        jPanel.add(clearAll, new GridBag (0,0,7,12,2,1)) ;
+        jPanel.add(clearAll, new GridBag (0,0,7,12,1,1)) ;
+
+        //Test
+        JButton test=new JButton("Test ");
+        test.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                myConsole.setText(      "########## From ##########"+"\n"+from.getText()
+                        +"\n"+"########## ToList ##########"+"\n"+toList.getText()
+                        +"\n"+"########## Mail service ##########"+"\n"+mailService.getSelectedItem()
+                        +"\n"+"########## Password ##########"+"\n"+password.getText()
+                        +"\n"+"########## Counter ##########"+"\n"+counter.getText()
+                        +"\n"+"########## LetterTitleArea ##########"+"\n"+lta.getText()
+                        +"\n"+"########## Message ##########"+"\n"+myMessage.getText() );
+            }
+        });
+        jPanel.add(test, new GridBag (0,0,7,13,1,1)) ;
+
+
         //Send
         JButton send=new JButton("SEND ");
         send.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-            /*    From.setFrom(from.getText());
-                myMessage.setText(myMessage.getText());
-                lta.setText("Put title here ... ");
-                console.setText("Console message here ... ");
-                toList.setText("Recipients ... ");
-                from.setText(from.getText());
-                password.setText("Put password here ... ");
-                counter.setText("999");*/
-                System.out.println(lta.getText());
-                System.out.println("");
-                System.out.println(myMessage.getText());
-                console.setText(      "########## From ##########"+"\n"+from.getText()
-                                +"\n"+"########## ToList ##########"+"\n"+toList.getText()
-                                +"\n"+"########## Mail service ##########"+"\n"+mailService.getSelectedItem()
-                                +"\n"+"########## Password ##########"+"\n"+password.getText()
-                                +"\n"+"########## Counter ##########"+"\n"+counter.getText()
-                                +"\n"+"########## LetterTitleArea ##########"+"\n"+lta.getText()
-                                +"\n"+"########## Message ##########"+"\n"+myMessage.getText() );
-            /*  Sender sender=new   Sender();
+              Sender sender=new   Sender();
                 try {
+                    sender.setFromS(from.getText().trim());
+                    sender.setToS(toList.getText().trim());
+                    sender.setMailServiceS(((String)mailService.getSelectedItem()).trim());
+                    sender.setPasswordS(password.getText().trim());
+                    sender.setCounterS(Integer.parseInt( counter.getText().trim()));
+                    sender.setTitleS(lta.getText().trim());
+                    sender.setMessageS(myMessage.getText().trim());
+
                     sender.send();
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 } catch (MessagingException e1) {
                     e1.printStackTrace();
-                }*/
+                }
             }
         });
-        jPanel.add(send, new GridBag (0,0,8,12,2,1))  ;
+        jPanel.add(send, new GridBag (0,0,7,14,1,1))  ;
         //Exit
         JButton exit=new JButton("EXIT ");
         exit.addActionListener(new ActionListener() {
@@ -151,15 +159,13 @@ public class Main {
                 System.exit(0);
             }
         });
-        jPanel.add(exit, new GridBag (0,0,10,12,2,1)) ;
+        jPanel.add(exit, new GridBag (0,0,7,15,1,1)) ;
 
 
 
         jPanel.revalidate();
     }
-    class GetInfo{
 
-    }
 }
 
 

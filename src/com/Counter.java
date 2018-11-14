@@ -11,7 +11,7 @@ public class Counter  extends JTextArea {
         this.counter = counter;
     }
 
-    String counter = "999 ";
+    String counter = "1";
 
     public Counter() {
         setColumns(10);

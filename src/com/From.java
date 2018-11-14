@@ -11,7 +11,7 @@ public class From extends JTextArea {
          from = from;
     }
 
-   static String from="From ... ";
+   static String from="From...";
 
     public From() {
         setColumns(30);

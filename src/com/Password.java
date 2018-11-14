@@ -11,7 +11,7 @@ public class Password extends JTextArea {
         this.password = password;
     }
 
-    String password = "Password ... ";
+    String password = "Password...";
 
     public Password() {
         setColumns(30);
