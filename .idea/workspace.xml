@@ -2,31 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="facc86cb-e19c-4e5f-87de-2d00a6be3f87" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/MyConsole.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpamBro/com/Console.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/SpamBro/com/Main$GetInfo.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/com/Console.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpamBro/com/Counter.class" afterPath="$PROJECT_DIR$/out/production/SpamBro/com/Counter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpamBro/com/From.class" afterPath="$PROJECT_DIR$/out/production/SpamBro/com/From.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpamBro/com/MailService.class" afterPath="$PROJECT_DIR$/out/production/SpamBro/com/MailService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpamBro/com/Main$1.class" afterPath="$PROJECT_DIR$/out/production/SpamBro/com/Main$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpamBro/com/Main$2.class" afterPath="$PROJECT_DIR$/out/production/SpamBro/com/Main$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpamBro/com/Main$3.class" afterPath="$PROJECT_DIR$/out/production/SpamBro/com/Main$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpamBro/com/Main$4.class" afterPath="$PROJECT_DIR$/out/production/SpamBro/com/Main$4.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpamBro/com/Main.class" afterPath="$PROJECT_DIR$/out/production/SpamBro/com/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpamBro/com/MyMessage.class" afterPath="$PROJECT_DIR$/out/production/SpamBro/com/MyMessage.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpamBro/com/Password.class" afterPath="$PROJECT_DIR$/out/production/SpamBro/com/Password.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpamBro/com/Sender.class" afterPath="$PROJECT_DIR$/out/production/SpamBro/com/Sender.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpamBro/com/ToList.class" afterPath="$PROJECT_DIR$/out/production/SpamBro/com/ToList.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpamBro/com/MyConsole.class" afterPath="$PROJECT_DIR$/out/production/SpamBro/com/MyConsole.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/SpamBro/gmail.properties" afterPath="$PROJECT_DIR$/out/production/SpamBro/gmail.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/Counter.java" afterPath="$PROJECT_DIR$/src/com/Counter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/From.java" afterPath="$PROJECT_DIR$/src/com/From.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/MailService.java" afterPath="$PROJECT_DIR$/src/com/MailService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/Main.java" afterPath="$PROJECT_DIR$/src/com/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/MyMessage.java" afterPath="$PROJECT_DIR$/src/com/MyMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/Password.java" afterPath="$PROJECT_DIR$/src/com/Password.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/Sender.java" afterPath="$PROJECT_DIR$/src/com/Sender.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/ToList.java" afterPath="$PROJECT_DIR$/src/com/ToList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/gmail.properties" afterPath="$PROJECT_DIR$/src/gmail.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/MyConsole.java" afterPath="$PROJECT_DIR$/src/com/MyConsole.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/mailru.properties" afterPath="$PROJECT_DIR$/src/mailru.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/yandexru.properties" afterPath="$PROJECT_DIR$/src/yandexru.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="110" column="52" lean-forward="false" selection-start-line="110" selection-start-column="52" selection-end-line="110" selection-end-column="52" />
+            <state relative-caret-position="189">
+              <caret line="49" column="8" lean-forward="false" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -50,11 +36,43 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="petro.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MyConsole.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/MyConsole.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="35" column="23" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="petro.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/petro.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="29" />
+            <state relative-caret-position="50">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mailru.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/mailru.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="yandexru.properties" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/yandexru.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -108,7 +126,7 @@
         <entry file="file://$PROJECT_DIR$/src/gmail.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
-              <caret line="3" column="45" lean-forward="false" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+              <caret line="3" column="45" lean-forward="true" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -143,26 +161,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
               <caret line="13" column="31" lean-forward="false" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="From.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/From.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyConsole.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/MyConsole.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -209,9 +207,11 @@
         <option value="$PROJECT_DIR$/src/com/Password.java" />
         <option value="$PROJECT_DIR$/src/com/MailService.java" />
         <option value="$PROJECT_DIR$/src/com/Counter.java" />
-        <option value="$PROJECT_DIR$/src/gmail.properties" />
-        <option value="$PROJECT_DIR$/src/com/MyConsole.java" />
         <option value="$PROJECT_DIR$/src/com/Sender.java" />
+        <option value="$PROJECT_DIR$/src/gmail.properties" />
+        <option value="$PROJECT_DIR$/src/yandexru.properties" />
+        <option value="$PROJECT_DIR$/src/mailru.properties" />
+        <option value="$PROJECT_DIR$/src/com/MyConsole.java" />
         <option value="$PROJECT_DIR$/src/com/Main.java" />
       </list>
     </option>
@@ -477,12 +477,12 @@
       <option name="presentableId" value="Default" />
       <updated>1542142316239</updated>
       <workItem from="1542142317536" duration="21771000" />
-      <workItem from="1542195667240" duration="2717000" />
+      <workItem from="1542195667240" duration="4757000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24488000" />
+    <option name="totallyTimeSpent" value="26528000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -497,7 +497,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.425" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31195652" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -819,26 +819,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gmail.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="45" lean-forward="false" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/Console.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/MyConsole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -885,21 +869,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/gmail.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="110" column="52" lean-forward="false" selection-start-line="110" selection-start-column="52" selection-end-line="110" selection-end-column="52" />
+        <state relative-caret-position="75">
+          <caret line="3" column="45" lean-forward="true" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/yandexru.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="35" lean-forward="false" selection-start-line="3" selection-start-column="35" selection-end-line="3" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/mailru.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/petro.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/MyConsole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="35" column="23" lean-forward="true" selection-start-line="35" selection-start-column="23" selection-end-line="35" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/petro.txt">
+    <entry file="file://$PROJECT_DIR$/src/com/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="189">
+          <caret line="49" column="8" lean-forward="false" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
