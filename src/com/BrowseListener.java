@@ -6,13 +6,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
-import static com.Main.jPanel;
+import static com.Main.panelOne;
 
 public class BrowseListener implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         JFileChooser jFileChooser = new JFileChooser();
-        jFileChooser.showOpenDialog(jPanel);
+        jFileChooser.showOpenDialog(panelOne);
         jFileChooser.setCurrentDirectory(new File("D:\\"));
         jFileChooser.setFileFilter(new FileFilter() {
             @Override

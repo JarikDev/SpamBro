@@ -12,75 +12,82 @@ import static javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED;
 public class Main {
 
     static JFrame jFrame = new Frame ().getFrame();
-    static JPanel jPanel = new JPanel();
+    static JPanel panelOne = new JPanel();
+    static JPanel panelTwo = new JPanel();
+
 
     public static void main(String[] args) throws IOException {
 
-        jFrame.add(jPanel);
+        jFrame.add(panelOne,BorderLayout.WEST);
+        jFrame.add(panelTwo,BorderLayout.EAST);
+
         GridBagLayout gridBagLayout = new GridBagLayout();
-        jPanel.setLayout(gridBagLayout);
-        //Letter title
-        jPanel.add(new JLabel("Letter title: ",SwingConstants.LEFT), new GridBag (0,0,0,0,1,2)) ;
-        //Letter title area
-        LetterTitleArea lta=new LetterTitleArea();
-        jPanel.add(new JScrollPane(lta,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,1,3,4)) ;
-        //Message title
-        jPanel.add(new JLabel("Message: ",SwingConstants.LEFT), new GridBag (0,0,0,4,1,2)) ;
-        //Message area
-        MyMessage myMessage=new MyMessage();
-        jPanel.add(new JScrollPane(myMessage,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,5,7,4)) ;
-        //Clear
-        JButton clearMessage=new JButton("Clear ");
-        clearMessage.addActionListener(e -> myMessage.setText("Put message here ... "));
-        jPanel.add(clearMessage, new GridBag (0,0,0,12,1,1)) ;
-        //Copy
-        jPanel.add(new JButton("Copy " ), new GridBag (0,0,1,12,1,1)) ;
-        //Paste
-        jPanel.add(new JButton("Paste " ), new GridBag (0,0,2,12,1,1)) ;
-        //Browse file
-        JButton browseFileMes=new JButton("Browse file ... ");
-        browseFileMes.addActionListener(new BrowseListener());
-        jPanel.add(browseFileMes, new GridBag (0,0,3,12,1,1)) ;
+        panelOne.setLayout(gridBagLayout);
+        panelTwo.setLayout(gridBagLayout);
+        panelOne.setBackground(Color.ORANGE);
+        panelTwo.setBackground( Color.GREEN);
+
         //Console message
-        jPanel.add(new JLabel("Console message: ",SwingConstants.LEFT), new GridBag (0,0,0,13,1,2)) ;
+        panelOne.add(new JLabel("Console message: ",SwingConstants.LEFT), new GridBag (0,0,0,0,1,2)) ;
 
         //Console field
         MyConsole myConsole=new MyConsole();
-        jPanel.add(new JScrollPane(myConsole,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,14,5,4)) ;
-      //  myConsole.setMyConsoleMessage();
+        panelOne.add(new JScrollPane(myConsole,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,1,5,4)) ;
 
+        //Letter title
+        panelOne.add(new JLabel("Letter title: ",SwingConstants.LEFT), new GridBag (0,0,0,6,1,2)) ;
+        //Letter title area
+        LetterTitleArea lta=new LetterTitleArea();
+        panelOne.add(new JScrollPane(lta,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,7,3,4)) ;
+        //Message title
+        panelOne.add(new JLabel("Message: ",SwingConstants.LEFT), new GridBag (0,0,0,10,1,2)) ;
+        //Message area
+        MyMessage myMessage=new MyMessage();
+        panelOne.add(new JScrollPane(myMessage,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,11,7,4)) ;
+        //Clear
+        JButton clearMessage=new JButton("Clear ");
+        clearMessage.addActionListener(e -> myMessage.setText("Put message here ... "));
+        panelOne.add(clearMessage, new GridBag (0,0,0,18,1,1)) ;
+        //Copy
+        panelOne.add(new JButton("Copy " ), new GridBag (0,0,1,18,1,1)) ;
+        //Paste
+        panelOne.add(new JButton("Paste " ), new GridBag (0,0,2,18,1,1)) ;
+        //Browse file
+        JButton browseFileMes=new JButton("Browse file ... ");
+        browseFileMes.addActionListener(new BrowseListener());
+        panelOne.add(browseFileMes, new GridBag (0,0,3,18,1,1)) ;
 
 
         //Right side
         //To list
-        jPanel.add(new JLabel("To list:",SwingConstants.LEFT), new GridBag (0,0,7,0,1,2)) ;
+        panelTwo.add(new JLabel("To list:",SwingConstants.LEFT), new GridBag (0,0,0,0,1,2)) ;
         //To list area
         ToList toList=new ToList();
-        jPanel.add(new JScrollPane(toList,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,7,1,3,4)) ;
+        panelTwo.add(new JScrollPane(toList,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,1,3,4)) ;
         //Browse file with to list
         JButton browseToList=new JButton("Browse to list file ... ");
         browseToList.addActionListener(new BrowseListener());
-        jPanel.add(browseToList, new GridBag (0,0,7,4,1,2));
+        panelTwo.add(browseToList, new GridBag (0,0,0,4,1,2));
         //From
-        jPanel.add(new JLabel("From: ",SwingConstants.LEFT), new GridBag (0,0,7,5,1,2)) ;
+        panelTwo.add(new JLabel("From: ",SwingConstants.LEFT), new GridBag (0,0,0,5,1,2)) ;
         //From field
          From from=new From();
-        jPanel.add(new JScrollPane(from,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,7,6,2,4)) ;
+        panelTwo.add(new JScrollPane(from,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,6,1,4)) ;
         //Mail account password
-        jPanel.add(new JLabel("Mail account password: ",SwingConstants.LEFT), new GridBag (0,0,7,8,1,2)) ;
+        panelTwo.add(new JLabel("Mail account password: ",SwingConstants.LEFT), new GridBag (0,0,0,7,1,2)) ;
         //Password field
         Password password=new Password();
-        jPanel.add(new JScrollPane(password,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,7,9,1,4)) ;
+        panelTwo.add(new JScrollPane(password,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,8,1,4)) ;
         //Mail service label
-        jPanel.add(new JLabel("Mail service: ",SwingConstants.LEFT), new GridBag (0,0,7,10,1,1)) ;
+        panelTwo.add(new JLabel("Mail service: ",SwingConstants.LEFT), new GridBag (0,0,0,9,1,1)) ;
         //Mail service
         JComboBox<String> mailService=new MailService();
-        jPanel.add(mailService, new GridBag (0,0,8,10,1,3));
+        panelTwo.add(mailService, new GridBag (0,0,1,9,1,2));
          //Counter
-        jPanel.add(new JLabel("Counter: ",SwingConstants.LEFT), new GridBag (0,0,7,11,1,2)) ;
+        panelTwo.add(new JLabel("Counter: ",SwingConstants.LEFT), new GridBag (0,0,0,10,1,1)) ;
         //Counter field
         Counter counter=new Counter();
-        jPanel.add(new JScrollPane(counter,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,9,11,1,3)) ;
+        panelTwo.add(new JScrollPane(counter,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,1,10,1,1)) ;
         //Clear all
         JButton clearAll=new JButton("Clear all ");
         clearAll.addActionListener(new ActionListener() {
@@ -95,7 +102,7 @@ public class Main {
                 counter.setText("1");
             }
         });
-        jPanel.add(clearAll, new GridBag (0,0,7,12,1,1)) ;
+        panelTwo.add(clearAll, new GridBag (0,0,0,11,1,1)) ;
         //Test
         JButton test=new JButton("Test ");
         test.addActionListener(new ActionListener() {
@@ -110,7 +117,7 @@ public class Main {
                         +"\n"+"########## Message ##########"+"\n"+myMessage.getText() );
             }
         });
-        jPanel.add(test, new GridBag (0,0,7,13,1,1)) ;
+        panelTwo.add(test, new GridBag (0,0,0,12,1,1)) ;
         //Send
         JButton send=new JButton("SEND ");
         send.addActionListener(new ActionListener() {
@@ -133,7 +140,7 @@ public class Main {
                 }
             }
         });
-        jPanel.add(send, new GridBag (0,0,7,14,1,1))  ;
+        panelTwo.add(send, new GridBag (0,0,0,13,1,1))  ;
         //Exit
         JButton exit=new JButton("EXIT ");
         exit.addActionListener(new ActionListener() {
@@ -142,9 +149,10 @@ public class Main {
                 System.exit(0);
             }
         });
-        jPanel.add(exit, new GridBag (0,0,7,15,1,1)) ;
+        panelTwo.add(exit, new GridBag (0,0,0,14,1,1)) ;
 
-        jPanel.revalidate();
+        panelOne.revalidate();
+        panelTwo.revalidate();
     }
 }
 

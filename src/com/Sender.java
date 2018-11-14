@@ -90,13 +90,13 @@ public class Sender {
         final Properties properties = new Properties();
 
         if (mailServiceS == new MailService().getMail()) {
-            properties.load(new FileInputStream("src/mailru.properties"));
+            properties.load(new FileInputStream("mailru.properties"));
         }
         if (mailServiceS == new MailService().getYandex()) {
-            properties.load(new FileInputStream("src/yandexru.properties"));
+            properties.load(new FileInputStream("yandexru.properties"));
         }
         if (mailServiceS == new MailService().getGmail()) {
-            properties.load(new FileInputStream("src/gmail.properties"));
+            properties.load(new FileInputStream("gmail.properties"));
         }
         if (mailServiceS == new MailService().getOther()) {
             new MyConsole().setText("Please choose adequate mail service");
