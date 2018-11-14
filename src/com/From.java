@@ -15,7 +15,7 @@ public class From extends JTextArea {
 
     public From() {
         setColumns(30);
-        setRows(3);
+        setRows(1);
         setText(from);
         setLineWrap(true);
     }

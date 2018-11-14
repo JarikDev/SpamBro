@@ -11,7 +11,7 @@ public class MyMessage extends JTextArea {
         this.myMessage = message;
     }
 
-    String myMessage = "Put title here...";
+    String myMessage = "Message...";
 
     public MyMessage() {
         setColumns(30);

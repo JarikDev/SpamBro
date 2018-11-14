@@ -11,11 +11,11 @@ public class LetterTitleArea extends JTextArea {
         this.letterTitleArea = letterTitleArea;
     }
 
-    String letterTitleArea = "Put title here ... ";
+    String letterTitleArea = "Title...";
 
     public LetterTitleArea() {
         setColumns(30);
-        setRows(3);
+        setRows(1);
         setText(letterTitleArea);
         setLineWrap(true);
     }

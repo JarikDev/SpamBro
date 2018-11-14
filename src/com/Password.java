@@ -15,7 +15,7 @@ public class Password extends JTextArea {
 
     public Password() {
         setColumns(30);
-        setRows(3);
+        setRows(1);
         setText(password);
         setLineWrap(true);
     }

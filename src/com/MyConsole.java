@@ -17,11 +17,11 @@ public class MyConsole extends JTextArea {
         this.consoleMessage = consoleMessage;
     }
 
-    String consoleMessage = "Put title here...";
+    String consoleMessage = "Console...";
 
     public MyConsole() {
         setColumns(30);
-        setRows(10);
+        setRows(22);
         setText(consoleMessage);
         setLineWrap(true);
     }
