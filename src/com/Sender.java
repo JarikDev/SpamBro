@@ -13,23 +13,39 @@ import java.util.Properties;
 
 
 public class Sender {
-    public static void main(String[] args) throws IOException, MessagingException {
+    public   void send( ) throws IOException, MessagingException {
         final Properties properties = new Properties();
-        properties.load(new FileInputStream("src/mail.properties"));
 
-        Session mailSession = Session.getDefaultInstance(properties);
-        MimeMessage message = new MimeMessage(mailSession);
-        message.setFrom(new InternetAddress("***@gmail.com"));
-        message.addRecipient(Message.RecipientType.TO, new InternetAddress("sxln1@mail.ru"));
-        message.setSubject("Hello email !!!");
-        message.setText("HI! this is my test message");
-
-        for (int i = 0; i < 3; i++) {
-            Transport transport=mailSession.getTransport();
-            transport.connect(null,"***");
-            transport.sendMessage(message,message.getAllRecipients());
-            transport.close();
+        if (new MailService().getSelectedItem() == new MailService().getMail()) {
+            properties.load(new FileInputStream("src/mailru.properties"));
         }
+        if (new MailService().getSelectedItem() == new MailService().getYandex()) {
+            properties.load(new FileInputStream("src/yandexru.properties"));
+        }
+        if (new MailService().getSelectedItem() == new MailService().getGmail()) {
+            properties.load(new FileInputStream("src/gmail.properties"));
+        }
+        if (new MailService().getSelectedItem() == new MailService().getOther()) {
+            new Console().setText("Please choose adequate mail service");
+        }
+
+     // public  void send(){
+            Session mailSession = Session.getDefaultInstance(properties);
+            MimeMessage message = new MimeMessage(mailSession);
+            message.setFrom(new InternetAddress( new From().getFrom()));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(new ToList().getToList()));
+            message.setSubject(new LetterTitleArea().getLetterTitleArea());
+
+            message.setText(new MyMessage().getMyMessage());
+
+            for (int i = 0; i < 3; i++) {
+                Transport transport = mailSession.getTransport();
+                transport.connect(null, "***");
+                transport.sendMessage(message, message.getAllRecipients());
+                transport.close();
+            }
+
+
 
 
     }

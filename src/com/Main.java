@@ -1,95 +1,148 @@
 package com;
 
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Properties;
+import javax.swing.filechooser.FileFilter;
 
 import static javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_AS_NEEDED;
 import static javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED;
 
 
 public class Main {
-    static JFrame jFrame = getFrame();
+    static JFrame jFrame = new Frame ().getFrame();
     static JPanel jPanel = new JPanel();
-
+   // public static From from=new From();
     public static void main(String[] args) {
+
         jFrame.add(jPanel);
         GridBagLayout gridBagLayout = new GridBagLayout();
         jPanel.setLayout(gridBagLayout);
         //Letter title
         jPanel.add(new JLabel("Letter title: ",SwingConstants.LEFT), new GridBag (0,0,0,0,1,2)) ;
         //Letter title area
-        JTextArea title=new JTextArea("Put title here ... ",3, 30);
-        title.setLineWrap(true);
-        jPanel.add(new JScrollPane(title,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,1,3,4)) ;
+        LetterTitleArea lta=new LetterTitleArea();
+        jPanel.add(new JScrollPane(lta,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,1,3,4)) ;
         //Message title
         jPanel.add(new JLabel("Message: ",SwingConstants.LEFT), new GridBag (0,0,0,4,1,2)) ;
         //Message area
-        JTextArea message=new JTextArea("Put message here ... ",20, 30);
-        message.setLineWrap(true);
-        jPanel.add(new JScrollPane(message,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,5,7,4)) ;
+        MyMessage myMessage=new MyMessage();
+        jPanel.add(new JScrollPane(myMessage,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,5,7,4)) ;
         //Clear
         JButton clearMessage=new JButton("Clear ");
-        clearMessage.addActionListener(e -> message.setText("Put message here ... "));
+        clearMessage.addActionListener(e -> myMessage.setText("Put message here ... "));
         jPanel.add(clearMessage, new GridBag (0,0,0,12,1,1)) ;
         //Copy
         jPanel.add(new JButton("Copy " ), new GridBag (0,0,1,12,1,1)) ;
         //Paste
         jPanel.add(new JButton("Paste " ), new GridBag (0,0,2,12,1,1)) ;
         //Browse file
-        jPanel.add(new JButton("Browse file " ), new GridBag (0,0,3,12,1,1)) ;
-        //Error message
-        jPanel.add(new JLabel("Error message: ",SwingConstants.LEFT), new GridBag (0,0,0,13,1,2)) ;
-        //Error field
-        JTextArea errorField=new JTextArea("Error message here ... ",10, 30);
-        errorField.setLineWrap(true);
-        jPanel.add(new JScrollPane(errorField,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,14,5,4)) ;
+        JButton browseFileMes=new JButton("Browse file ... ");
+        browseFileMes.addActionListener(new BrowseListener());
+        jPanel.add(browseFileMes, new GridBag (0,0,3,12,1,1)) ;
+        //Console message
+        jPanel.add(new JLabel("Console message: ",SwingConstants.LEFT), new GridBag (0,0,0,13,1,2)) ;
+        //Console field
+        Console console=new Console();
+        jPanel.add(new JScrollPane(console,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,0,14,5,4)) ;
         //Right side
         //To list
         jPanel.add(new JLabel("To list:",SwingConstants.LEFT), new GridBag (0,0,7,0,1,2)) ;
         //To list area
-        JTextArea toList=new JTextArea("Recipients ... ",3, 30);
-        toList.setLineWrap(true);
+        ToList toList=new ToList();
         jPanel.add(new JScrollPane(toList,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,7,1,3,4)) ;
-        //Browse file with toi list
-        jPanel.add(new JButton("Browse file " ), new GridBag (0,0,7,4,1,2));
+        //Browse file with to list
+        JButton browseToList=new JButton("Browse to list file ... ");
+        browseToList.addActionListener(new BrowseListener());
+        jPanel.add(browseToList, new GridBag (0,0,7,4,1,2));
         //From
         jPanel.add(new JLabel("From: ",SwingConstants.LEFT), new GridBag (0,0,7,5,1,2)) ;
+
         //From field
-        JTextArea fromField=new JTextArea("From ... ",3, 30);
-        fromField.setLineWrap(true);
-        jPanel.add(new JScrollPane(fromField,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,7,6,2,4)) ;
+         From from=new From();
+        jPanel.add(new JScrollPane(from,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,7,6,2,4)) ;
+
         //Mail account password
         jPanel.add(new JLabel("Mail account password: ",SwingConstants.LEFT), new GridBag (0,0,7,8,1,2)) ;
+
         //Password field
-        JTextArea passField=new JTextArea("Put password here ... ",3, 30);
-        passField.setLineWrap(true);
-        jPanel.add(new JScrollPane(passField,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,7,9,1,4)) ;
-        //Counter
-        jPanel.add(new JLabel("Counter: ",SwingConstants.LEFT), new GridBag (0,0,7,10,1,2)) ;
+        Password password=new Password();
+        jPanel.add(new JScrollPane(password,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,7,9,1,4)) ;
+
+        //Mail service label
+        jPanel.add(new JLabel("Mail service: ",SwingConstants.LEFT), new GridBag (0,0,7,10,1,1)) ;
+        //Mail service
+        JComboBox<String> mailService=new MailService();
+        jPanel.add(mailService, new GridBag (0,0,8,10,1,3));
+         //Counter
+        jPanel.add(new JLabel("Counter: ",SwingConstants.LEFT), new GridBag (0,0,7,11,1,2)) ;
+
+
         //Counter field
-        JTextArea counterField=new JTextArea("999",1, 10);
-        counterField.setLineWrap(true);
-        jPanel.add(new JScrollPane(counterField,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,9,10,1,3)) ;
+        Counter counter=new Counter();
+        jPanel.add(new JScrollPane(counter,VERTICAL_SCROLLBAR_AS_NEEDED, ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER), new GridBag (0,0,9,11,1,3)) ;
+
 
         //Clear all
         JButton clearAll=new JButton("Clear all ");
         clearAll.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                message.setText("Put message here ... ");
-                title.setText("Put title here ... ");
-                errorField.setText("Error message here ... ");
+                myMessage.setText("Put message here ... ");
+                lta.setText("Put title here ... ");
+                console.setText("Console message here ... ");
                 toList.setText("Recipients ... ");
-                fromField.setText("From ... ");
-                passField.setText("Put password here ... ");
-                counterField.setText("999");
+                from.setText("From ... ");
+                password.setText("Put password here ... ");
+                counter.setText("999");
             }
         });
-        jPanel.add(clearAll, new GridBag (0,0,7,11,2,1)) ;
+        jPanel.add(clearAll, new GridBag (0,0,7,12,2,1)) ;
         //Send
-        jPanel.add(new JButton("SEND " ), new GridBag (0,0,8,11,2,1))  ;
+        JButton send=new JButton("SEND ");
+        send.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            /*    From.setFrom(from.getText());
+                myMessage.setText(myMessage.getText());
+                lta.setText("Put title here ... ");
+                console.setText("Console message here ... ");
+                toList.setText("Recipients ... ");
+                from.setText(from.getText());
+                password.setText("Put password here ... ");
+                counter.setText("999");*/
+                System.out.println(lta.getText());
+                System.out.println("");
+                System.out.println(myMessage.getText());
+                console.setText(      "########## From ##########"+"\n"+from.getText()
+                                +"\n"+"########## ToList ##########"+"\n"+toList.getText()
+                                +"\n"+"########## Mail service ##########"+"\n"+mailService.getSelectedItem()
+                                +"\n"+"########## Password ##########"+"\n"+password.getText()
+                                +"\n"+"########## Counter ##########"+"\n"+counter.getText()
+                                +"\n"+"########## LetterTitleArea ##########"+"\n"+lta.getText()
+                                +"\n"+"########## Message ##########"+"\n"+myMessage.getText() );
+            /*  Sender sender=new   Sender();
+                try {
+                    sender.send();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                } catch (MessagingException e1) {
+                    e1.printStackTrace();
+                }*/
+            }
+        });
+        jPanel.add(send, new GridBag (0,0,8,12,2,1))  ;
         //Exit
         JButton exit=new JButton("EXIT ");
         exit.addActionListener(new ActionListener() {
@@ -98,20 +151,13 @@ public class Main {
                 System.exit(0);
             }
         });
-        jPanel.add(exit, new GridBag (0,0,10,11,2,1)) ;
+        jPanel.add(exit, new GridBag (0,0,10,12,2,1)) ;
+
+
 
         jPanel.revalidate();
     }
-    static JFrame getFrame() {
-        JFrame jFrame = new JFrame() {};
-        jFrame.setVisible(true);
-        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Dimension dimension = toolkit.getScreenSize();
-        jFrame.setBounds(dimension.width / 2 - 700, dimension.height / 2 - 300, 800, 700);
-        jFrame.setTitle("SpamBro");
-        jFrame.setResizable(false);
-        return jFrame;
+    class GetInfo{
 
     }
 }
