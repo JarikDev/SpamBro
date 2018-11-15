@@ -1,6 +1,7 @@
 package com;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 
 public class MailService extends JComboBox<String> {
@@ -43,9 +44,11 @@ public class MailService extends JComboBox<String> {
 
 
     public MailService() {
+
+        addItem(gmail);
         addItem(mail);
         addItem(yandex);
-        addItem(gmail);
         addItem(other);
+        setFont(new Font("Verdana", Font.PLAIN, 14));
     }
 }

@@ -10,10 +10,10 @@ public class Frame extends JFrame {
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension dimension = toolkit.getScreenSize();
-        jFrame.setBounds(dimension.width / 2 - 700, dimension.height / 2 - 300, 700, 700);
+        jFrame.setBounds(dimension.width / 2 - 700, dimension.height / 2 - 300, 650, 700);
         jFrame.setTitle("SpamBro");
         jFrame.setBackground(Color.BLACK);
-       jFrame.setResizable(false);
-        return  jFrame;
+        jFrame.setResizable(false);
+        return jFrame;
     }
 }

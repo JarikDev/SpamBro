@@ -14,8 +14,8 @@ public class LetterTitleArea extends JTextArea {
     String letterTitleArea = "Title...";
 
     public LetterTitleArea() {
-        setColumns(30);
-        setRows(1);
+        setColumns(23);
+        setRows(2);
         setText(letterTitleArea);
         setLineWrap(true);
     }

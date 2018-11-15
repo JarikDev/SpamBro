@@ -20,8 +20,8 @@ public class MyConsole extends JTextArea {
     String consoleMessage = "Console...";
 
     public MyConsole() {
-        setColumns(30);
-        setRows(22);
+        setColumns(20);
+        setRows(14);
         setText(consoleMessage);
         setLineWrap(true);
     }

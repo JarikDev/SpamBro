@@ -14,8 +14,8 @@ public class ToList extends JTextArea {
     String toList = "Recipients...";
 
     public ToList() {
-        setColumns(30);
-        setRows(5);
+        setColumns(20);
+        setRows(4);
         setText(toList);
         setLineWrap(true);
     }

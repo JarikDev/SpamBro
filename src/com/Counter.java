@@ -14,7 +14,7 @@ public class Counter  extends JTextArea {
     String counter = "1";
 
     public Counter() {
-        setColumns(10);
+        setColumns(20);
         setRows(1);
         setText(counter);
         setLineWrap(true);
