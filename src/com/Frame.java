@@ -4,7 +4,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Frame extends JFrame {
-    public JFrame getFrame() throws HeadlessException {
+    public JFrame getFrame()   {
+
+        try {
+            new MySplashScreen().getMySplashScreen();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
         JFrame jFrame = new JFrame() {};
         jFrame.setVisible(true);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
