@@ -1,37 +1,46 @@
 package com;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.SplashScreen;
+import java.io.File;
+import java.io.IOException;
 
 import static javax.swing.SwingUtilities.paintComponent;
 
 public class MySplashScreen {
-    public void getMySplashScreen() throws InterruptedException {
+    public void getMySplashScreen() throws InterruptedException, IOException {
         SplashScreen splash = SplashScreen.getSplashScreen();
         Rectangle rec = splash.getBounds();
         Graphics2D g2 = splash.createGraphics();
-       // Color color = new Color(67, 70, 75);
-        Color color = new Color(98, 178, 227);
+        // Color color = new Color(67, 70, 75);
+        int alpha = 102;
 
+        Color color = new Color(98, 178, 227, alpha);
         g2.setColor(color);
 
-        for (int i =  0; i <  100; i++) {
+
+        for (int i = 0; i < 100; i++) {
             g2.fillRect(0, 0, rec.width * i / 100, 321);
             splash.update();
             try {
-                Thread.sleep(10 );
+                Thread.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
 
-       /* SplashScreen splashScreen = SplashScreen.getSplashScreen();
-        final Image img = new ImageIcon(splashScreen.getImageURL()).getImage();
+        /*SplashScreen splashScreen = SplashScreen.getSplashScreen();
+     // final Image img = new ImageIcon(splashScreen.getImageURL()).getImage();
+        final Image img = ImageIO.read(new File("pr.jpg"));
+
         final JFrame splashFrame = new JFrame();
         final JPanel splashPanel = new JPanel();
+
         splashPanel.add(new JComponent() {
             public void paintComponent(Graphics g) {
+                super.paintComponent(g);
                 g.drawImage(img, 0, 0, null);
             }
         });

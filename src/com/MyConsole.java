@@ -21,9 +21,10 @@ public class MyConsole extends JTextArea {
 
     public MyConsole() {
         setColumns(20);
-        setRows(14);
+        setRows(15);
         setText(consoleMessage);
         setLineWrap(true);
+        setEditable(false);
     }
 
     void setMyConsoleMessage() throws IOException {

@@ -1,6 +1,7 @@
 package com;
 
 import javax.mail.MessagingException;
+import javax.management.JMException;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -24,10 +25,10 @@ public class Main {
     static JPanel panelFour = new JPanel();
     static JPanel frameBack = new JPanel();
 
-
     public static void main(String[] args) throws IOException, ClassNotFoundException, UnsupportedLookAndFeelException, InstantiationException, IllegalAccessException, InterruptedException {
 
         UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
+
         jFrame.add(frameBack, BorderLayout.CENTER);
         jFrame.add(panelOne, BorderLayout.WEST);
         jFrame.add(panelTwo, BorderLayout.EAST);
@@ -192,6 +193,7 @@ public class Main {
                     sender.setTitleS(lta.getText().trim());
                     sender.setMessageS(myMessage.getText().trim());
                     sender.send();
+                    myConsole.setText("Message sent.");
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 } catch (MessagingException e1) {
@@ -230,17 +232,22 @@ public class Main {
                 jFileChooser.setDialogTitle("Save current session");
                 browseSaveListener.savedFileTitle = jFileChooser.getSelectedFile().getName();
                 browseSaveListener.savingPath = jFileChooser.getSelectedFile().getName();
-                FileFilter fileFilter=new FileNameExtensionFilter("txt files only","txt");
+                FileFilter fileFilter = new FileNameExtensionFilter("txt files only", "txt");
                 jFileChooser.setFileFilter(fileFilter);
 
-                if( jFileChooser.showSaveDialog(jFrame)== jFileChooser.APPROVE_OPTION ){
+                //System.out.println(jFileChooser.getSelectedFile().getName());
+
+//                int i = jFileChooser.showDialog(panelOne, "Save");
+//                System.out.println(i);
+//                File file = jFileChooser.getSelectedFile();
+//                System.out.println(file);
+
+                // if (jFileChooser.showDialog(panelOne, "Save") == 1) {
                 try {
                     browseSaveListener.saveToFile();
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
-            }
-
             }
         });
 

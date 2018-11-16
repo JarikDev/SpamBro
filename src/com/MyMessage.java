@@ -15,7 +15,7 @@ public class MyMessage extends JTextArea {
 
     public MyMessage() {
         setColumns(23);
-        setRows(29);
+        setRows(27);
         setText(myMessage);
         setLineWrap(true);
     }
